@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portafolio </title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <header>
         <nav>
-            <h1>Bruno Isaias Jakubowski</h1>
+            <h1>Bruno</h1>
             <ul>
                 <li><a href="#sobre-mi">Sobre mí</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
+                <li><button id="toggle-theme" aria-label="Cambiar tema">🌙</button></li>
             </ul>
         </nav>
     </header>
@@ -26,39 +27,46 @@
 
     <section id="sobre-mi">
         <h2>Sobre mí</h2>
-        <p>Soy Bruno, programador Jr con experiencia en desarrollo web. Me adapto rápido a nuevas tecnologías y busco oportunidades para trabajar en proyectos remotos que desafíen mis habilidades.</p>
+        <p>
+            Soy Bruno, programador Jr con experiencia en desarrollo web. Me adapto rápido a nuevas tecnologías y busco oportunidades para trabajar en proyectos remotos que desafíen mis habilidades.
+        </p>
     </section>
 
     <section id="proyectos">
         <h2>Proyectos</h2>
         <div class="grid">
             <div class="card">
-                <img src="img/proyecto1.jpg" alt="Proyecto 1">
+                <img src="img/proyecto1.png" alt="Proyecto 1" />
                 <h3>Landing Page</h3>
                 <p>Diseño moderno y responsive usando HTML, CSS y JavaScript.</p>
-                <a href="#" target="_blank">Ver proyecto</a>
+                <a href="#" target="_blank" class="btn">Ver proyecto</a>
+                <a href="descargas/proyecto1.zip" download class="btn-download">Descargar código</a>
             </div>
             <div class="card">
-                <img src="img/proyecto2.jpg" alt="Proyecto 2">
+                <img src="img/proyecto2.jpg" alt="Proyecto 2" />
                 <h3>Blog con Login</h3>
                 <p>Aplicación web con registro, login y base de datos.</p>
-                <a href="#" target="_blank">Ver proyecto</a>
+                <a href="#" target="_blank" class="btn">Ver proyecto</a>
+                <a href="descargas/proyecto2.zip" download class="btn-download">Descargar código</a>
             </div>
             <div class="card">
-                <img src="img/proyecto3.jpg" alt="Proyecto 3">
+                <img src="img/proyecto3.jpg" alt="Proyecto 3" />
                 <h3>App CRUD</h3>
                 <p>Gestión de datos con creación, edición y eliminación.</p>
-                <a href="#" target="_blank">Ver proyecto</a>
+                <a href="#" target="_blank" class="btn">Ver proyecto</a>
+                <a href="descargas/proyecto3.zip" download class="btn-download">Descargar código</a>
             </div>
         </div>
     </section>
 
     <section id="contacto">
         <h2>Contacto</h2>
-        <form>
-            <input type="text" placeholder="Tu nombre" required>
-            <input type="email" placeholder="Tu email" required>
-            <textarea placeholder="Mensaje" required></textarea>
+        <form action="https://formsubmit.co/tu-email@ejemplo.com" method="POST">
+            <!-- Cambia 'brusimportantes@gmail.com' por tu email real -->
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="name" placeholder="Tu nombre" required />
+            <input type="email" name="email" placeholder="Tu email" required />
+            <textarea name="message" placeholder="Mensaje" required></textarea>
             <button type="submit">Enviar</button>
         </form>
     </section>
