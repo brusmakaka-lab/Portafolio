@@ -1,28 +1,167 @@
-// Cambiar tema claro/oscuro
-const toggleThemeBtn = document.getElementById('toggle-theme');
-const body = document.body;
-
-// Carga tema guardado
-if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark');
-    toggleThemeBtn.textContent = '☀️';
-} else {
-    toggleThemeBtn.textContent = '🌙';
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-toggleThemeBtn.addEventListener('click', () => {
-    body.classList.toggle('dark');
-    if (body.classList.contains('dark')) {
-        toggleThemeBtn.textContent = '☀️';
-        localStorage.setItem('theme', 'dark');
-    } else {
-        toggleThemeBtn.textContent = '🌙';
-        localStorage.setItem('theme', 'light');
-    }
-});
+/* Variables para temas */
+:root {
+    --bg-color: #fff;
+    --text-color: #333;
+    --header-bg: #222;
+    --btn-bg: #ff6600;
+    --btn-color: #fff;
+    --btn-download-bg: #007bff;
+    --btn-download-hover: #0056b3;
+}
 
-// Enviar formulario con alert (aunque formsubmit hace el envío real)
-document.querySelector('form').addEventListener('submit', function(e) {
-    // Opcional: mostrar alerta
-    alert('Mensaje enviado. ¡Gracias por contactarme!');
-});
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background: var(--header-bg);
+    color: white;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+nav ul li a,
+nav ul li button {
+    color: white;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    background: var(--btn-bg);
+    color: var(--btn-color);
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+section {
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 0.5rem 0;
+}
+
+.btn-download {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--btn-download-bg);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+}
+
+.btn-download:hover {
+    background: var(--btn-download-hover);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input,
+form textarea,
+form button {
+    padding: 0.7rem;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+form button {
+    background: var(--btn-bg);
+    color: var(--btn-color);
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    background: var(--header-bg);
+    color: white;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Modo oscuro */
+body.dark {
+    --bg-color: #121212;
+    --text-color: #ddd;
+    --header-bg: #111;
+    --btn-bg: #ff8c00;
+    --btn-color: #222;
+    --btn-download-bg: #0056b3;
+    --btn-download-hover: #003d80;
+}
+
+body.dark .card {
+    background: #222;
+    border-color: #444;
+    color: #ddd;
+}
